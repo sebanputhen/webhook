@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Webhook</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 50px auto; padding: 20px; }
+        .status { padding: 15px; margin: 10px 0; border-radius: 5px; }
+        .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .info { background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+        code { background: #f8f9fa; padding: 2px 5px; border-radius: 3px; }
+    </style>
+</head>
+<body>
+    <h1>🔗 WhatsApp Webhook Deployed</h1>
+    
+    <div class="status success">
+        ✅ Your WhatsApp webhook is running successfully on Vercel!
+    </div>
+    
+    <div class="status info">
+        <h3>📋 Facebook Configuration:</h3>
+        <p><strong>Callback URL:</strong> <code id="webhook-url">https://yourproject.vercel.app/webhook</code></p>
+        <p><strong>Verify Token:</strong> <code>hello123</code></p>
+    </div>
+    
+    <h3>🧪 Test Links:</h3>
+    <ul>
+        <li><a href="/api/webhook.php" target="_blank">Direct webhook endpoint</a></li>
+        <li><a href="/webhook" target="_blank">Pretty URL webhook</a></li>
+        <li><a href="/api/webhook.php?hub.mode=subscribe&hub.verify_token=hello123&hub.challenge=TEST" target="_blank">Manual verification test</a></li>
+    </ul>
+    
+    <h3>📊 Next Steps:</h3>
+    <ol>
+        <li>Copy the <strong>Callback URL</strong> above</li>
+        <li>Go to Facebook Developer Console</li>
+        <li>Navigate to WhatsApp → Configuration → Webhooks</li>
+        <li>Paste the URL and verify token</li>
+        <li>Test by sending a WhatsApp message</li>
+    </ol>
+    
+    <div class="status info">
+        <p><strong>📝 Note:</strong> Check Vercel logs for incoming webhook data and debugging information.</p>
+    </div>
+    
+    <script>
+        // Update webhook URL with current domain
+        document.getElementById('webhook-url').textContent = window.location.origin + '/webhook';
+    </script>
+</body>
+</html>
