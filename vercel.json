@@ -1,13 +1,15 @@
 {
-  "functions": {
-    "api/index.php": {
-      "runtime": "vercel-php@0.6.0"
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/**/*.php",
+      "use": "vercel-php@0.6.0"
     }
-  },
+  ],
   "routes": [
     {
       "src": "/webhook",
-      "dest": "/api/"
+      "dest": "/api/webhook.php"
     }
   ]
 }
